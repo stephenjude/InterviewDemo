@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\User;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
@@ -18,7 +19,7 @@ class HomeController extends Controller
 
         User::create($data);
 
-        return back()->with('success', 'Your email subscription was successful');
+        return back()->with('success', "{$data['name']} your email subscription was successful");
 
     }
 }
